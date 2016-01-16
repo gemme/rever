@@ -1,0 +1,29 @@
+{
+  "name": "Rev",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "cycle": {
+      "type": "object"
+    },
+    "score": {
+      "type": "object"
+    },
+    "status": {
+      "type": "string"
+    },
+    "likes": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

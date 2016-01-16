@@ -1,0 +1,59 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Account": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "Invitation": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "Organization": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "Comment": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "Challenge": {
+    "dataSource": "mongodb",
+    "public": false
+  },
+  "Rev": {
+    "dataSource": "mongodb",
+    "public": true
+  }
+}

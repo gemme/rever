@@ -1,0 +1,29 @@
+{
+  "name": "Challenge",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "rewards": {
+      "type": "object"
+    },
+    "startAt": {
+      "type": "date"
+    },
+    "endAt": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

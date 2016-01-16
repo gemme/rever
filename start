@@ -1,0 +1,7 @@
+#!/bin/sh
+command -v nodemon >/dev/null 2>&1 || { echo >&2 "Error: nodemon is not installed. try: sudo npm install -g nodemon"; exit 1; }
+echo "\nRever API\n"
+echo "* Version 0.1.0"
+echo "* Environment: $1\n"
+NODE_ENV=$1 nodemon -e 'js,json,html,jade'
+
