@@ -6,5 +6,9 @@
   "mongodb": {
     "name": "mongodb",
     "connector": "mongodb"
+  },
+  "storage": {
+    "name": "storage",
+    "connector": "loopback-component-storage"
   }
 }
