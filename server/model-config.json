@@ -60,5 +60,9 @@
   "AccountRev": {
     "dataSource": "mongodb",
     "public": true
+  },
+  "Container": {
+    "dataSource": "storage",
+    "public": true
   }
 }
