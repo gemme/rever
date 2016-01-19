@@ -5,6 +5,9 @@
   "options": {
     "validateUpsert": true
   },
+  "mixins": {
+    "Timestamp": true
+  },
   "properties": {
     "name": {
       "type": "string"
@@ -13,7 +16,9 @@
       "type": "string"
     },
     "rewards": {
-      "type": "object"
+      "type": [
+        "object"
+      ]
     },
     "startAt": {
       "type": "date"
@@ -23,7 +28,23 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "comments": {
+      "type": "hasMany",
+      "model": "Comment",
+      "foreignKey": ""
+    },
+    "revs": {
+      "type": "hasMany",
+      "model": "Rev",
+      "foreignKey": ""
+    },
+    "account": {
+      "type": "belongsTo",
+      "model": "Account",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

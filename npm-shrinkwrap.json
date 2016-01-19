@@ -742,6 +742,11 @@
         }
       }
     },
+    "loopback-ds-timestamp-mixin": {
+      "version": "3.2.2",
+      "from": "loopback-ds-timestamp-mixin@*",
+      "resolved": "https://registry.npmjs.org/loopback-ds-timestamp-mixin/-/loopback-ds-timestamp-mixin-3.2.2.tgz"
+    },
     "loopback-phase": {
       "version": "1.2.0",
       "from": "loopback-phase@>=1.2.0 <2.0.0",

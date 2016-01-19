@@ -6,6 +6,9 @@
   "options": {
     "validateUpsert": true
   },
+  "mixins": {
+    "Timestamp": true
+  },
   "properties": {
     "email": {
       "type": "string",
@@ -29,7 +32,34 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "organization": {
+      "type": "belongsTo",
+      "model": "Organization",
+      "foreignKey": ""
+    },
+    "revs": {
+      "type": "hasMany",
+      "model": "Rev",
+      "foreignKey": "",
+      "through": "AccountRev"
+    },
+    "comments": {
+      "type": "hasMany",
+      "model": "Comment",
+      "foreignKey": ""
+    },
+    "challenges": {
+      "type": "hasMany",
+      "model": "Challenge",
+      "foreignKey": ""
+    },
+    "invitations": {
+      "type": "hasMany",
+      "model": "Invitation",
+      "foreignKey": "senderId"
+    }
+  },
   "acls": [],
   "methods": {}
 }

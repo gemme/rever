@@ -5,6 +5,9 @@
   "options": {
     "validateUpsert": true
   },
+  "mixins": {
+    "Timestamp": true
+  },
   "properties": {
     "name": {
       "type": "string"
@@ -13,17 +16,33 @@
       "type": "object"
     },
     "score": {
-      "type": "object"
+      "type": [
+        "object"
+      ]
     },
     "status": {
       "type": "string"
     },
     "likes": {
       "type": "number"
+    },
+    "photo": {
+      "type": "object"
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "comments": {
+      "type": "hasMany",
+      "model": "Comment",
+      "foreignKey": ""
+    },
+    "challenge": {
+      "type": "belongsTo",
+      "model": "Challenge",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

@@ -5,6 +5,9 @@
   "options": {
     "validateUpsert": true
   },
+  "mixins": {
+    "Timestamp": true
+  },
   "properties": {
     "email": {
       "type": "string"
@@ -17,7 +20,18 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "sender": {
+      "type": "belongsTo",
+      "model": "Account",
+      "foreignKey": "senderId"
+    },
+    "role": {
+      "type": "belongsTo",
+      "model": "Role",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }
