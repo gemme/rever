@@ -41,6 +41,12 @@
       "type": "belongsTo",
       "model": "Challenge",
       "foreignKey": ""
+    },
+    "accounts": {
+      "type": "hasMany",
+      "model": "Account",
+      "foreignKey": "",
+      "through": "AccountRev"
     }
   },
   "acls": [],

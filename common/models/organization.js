@@ -25,4 +25,35 @@ module.exports = function(Organization) {
 			accepts: {arg: 'req', type: 'object', 'http':{source: 'body'}},
 			returns: {arg: 'fullname', type: 'string'}
 		});
+
+	//Hook to save organizations with my own parameters
+	Organization.saveMe = (params, cb) => {
+		Organization.create(params, (err, model) => cb(null, model));
+	};
+
+	Organization.remoteMethod(
+		'saveMe',
+		{
+			accepts: {arg: 'req', type: 'object', 'http':{source: 'body'}, required: true},
+			returns: {arg: 'res', type: 'object', 'http':{source: 'body'}},
+		});
+
+	Organization.observe(
+		'before save',
+		(ctx, next) => {
+			//console.log(ctx);
+			//console.log(next);
+			if(ctx.instance){
+				ctx.instance.haber = ctx.instance.haber + ' beforeSAVE!!!!!' 
+			}
+			next();
+		});
+
+	Organization.observe(
+		'after save',
+		(ctx, next) => {
+			ctx.instance.unsetAttribute('haber');
+			next();
+		});
+
 };

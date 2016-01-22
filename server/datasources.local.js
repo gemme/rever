@@ -9,7 +9,10 @@ module.exports = {
   	storage: {
     	name: "storage",
     	connector: "loopback-component-storage",
-    	provider: 'filesystem',
-    	root: './server/storage'
+    	provider: 'amazon',
+    	key: 'qjeNSMLcy9rpvb90zqB9u9XbS+wEpvCOp8kevwJL',
+    	keyId: 'AKIAJ7IPRCCGV2JHFFJA'
+    	//provider: "filesystem",
+    	//root: "./server/storage"
   	}
 };
