@@ -23,5 +23,11 @@
       "disableStackTrace": false
     }
   },
-  "legacyExplorer": false
+  "legacyExplorer": false,
+  "dashboard": {
+    "url": "http://dashboard.reverscore.net"
+  },
+  "api": {
+    "url": "http://api.reverscore.net"
+  }
 }

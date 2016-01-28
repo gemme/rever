@@ -14,5 +14,14 @@ module.exports = {
     	keyId: 'AKIAJ7IPRCCGV2JHFFJA'
     	//provider: "filesystem",
     	//root: "./server/storage"
-  	}
+  	},
+  	email: {
+    name: "email",
+    connector: "lb-connector-mandrill",
+    apikey: "LhQdZtwtlDvLhnpaaLUB4g",
+    defaults: {
+            "account": "borja@reverscore.com",
+            "inline_css": true
+        }
+  }
 };

@@ -7,7 +7,8 @@
     "validateUpsert": true
   },
   "mixins": {
-    "Timestamp": true
+    "Timestamp": true,
+    "ResetPassword": true
   },
   "properties": {
     "email": {
@@ -60,6 +61,21 @@
       "foreignKey": "senderId"
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "welcome"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW",
+      "property": "changePassword"
+    }
+  ],
   "methods": {}
 }

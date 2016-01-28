@@ -1,0 +1,8 @@
+{
+  "dashboard": {
+    "url": "http://dev-dashboard.reverscore.net"
+  },
+  "api": {
+    "url": "http://localhost:3000"
+  }
+}

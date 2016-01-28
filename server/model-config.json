@@ -34,35 +34,42 @@
     "public": false
   },
   "Account": {
-    "dataSource": "mongodb",
-    "public": true
+    "dataSource": "db",
+    "public": true,
+    "options": {
+      "emailVerificationRequired": true
+    }
   },
   "Invitation": {
-    "dataSource": "mongodb",
+    "dataSource": "db",
     "public": true
   },
   "Organization": {
-    "dataSource": "mongodb",
+    "dataSource": "db",
     "public": true
   },
   "Comment": {
-    "dataSource": "mongodb",
+    "dataSource": "db",
     "public": true
   },
   "Challenge": {
-    "dataSource": "mongodb",
+    "dataSource": "db",
     "public": true
   },
   "Rev": {
-    "dataSource": "mongodb",
+    "dataSource": "db",
     "public": true
   },
   "AccountRev": {
-    "dataSource": "mongodb",
+    "dataSource": "db",
     "public": true
   },
   "Container": {
     "dataSource": "storage",
+    "public": true
+  },
+  "Email": {
+    "dataSource": "email",
     "public": true
   }
 }

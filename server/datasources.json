@@ -10,5 +10,14 @@
   "storage": {
     "name": "storage",
     "connector": "loopback-component-storage"
+  },
+  "email": {
+    "name": "email",
+    "connector": "lb-connector-mandrill",
+    "apikey": "LhQdZtwtlDvLhnpaaLUB4g",
+    "defaults": {
+      "account": "borja@reverscore.com",
+      "inline_css": true
+    }
   }
 }

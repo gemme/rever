@@ -63,3 +63,86 @@ module.exports = function (Rev) {
         });
     });
 };
+
+
+
+
+    /*Rev.observe('after save',(ctx, next) => {
+        
+        var current = loopback.getCurrentContext();
+        var accessToken = current.get('accessToken');
+        var Account = Rev.app.models.Account;
+        var saveOrUpdate = (ctx.instance)? 'instance': 'data';
+
+        var rev = (() =>{
+
+            //We delete unused properties for Rev Model
+            var deleteUnusedProperty = (accountId , property) => {
+                
+                    if (ctx.instance) {
+                        ctx.instance.unsetAttribute(property);
+                    } else {
+                        delete ctx.data[property];
+                    }
+            };
+            //We link type of users coach, owner, collaborators to revs
+            var linkUserType = (user,type) => {
+                    ctx[saveOrUpdate].accounts.add(
+                        user,
+                        {type: type},
+                        (err, account) => console.log(account)
+                    );
+                 
+            }
+            return {
+                deleteUnusedProperty: deleteUnusedProperty,
+                linkUserType: linkUserType
+            }
+        })();
+
+        async.parallel({
+            addingOwner: () => {      
+                //Account.findById(accessToken.userId,(err, model) => {            
+                    rev.linkUserType(model.id, "owner");
+                });
+            },
+            addingCoach: () => {
+                let coachId = ctx[saveOrUpdate].coach.id;                
+                let type = "coach";
+                rev.linkUserType(coachId, type);
+                rev.deleteUnusedProperty(coachId, type);
+            },
+            addingCollaborators: () => {
+                let type = "collaborator";
+                ctx[saveOrUpdate].collaborators.forEach((collaborator) => {
+                    rev.linkUserType(collaborator.id, type);
+                    rev.deleteUnusedProperty(collaborator.id, type+'s');
+                });
+            }
+        }, function (err, results) {
+            console.log(err);
+            console.log(results);            
+        });
+        next();
+    });
+*/
+    //Defining a model hook to delete unused properties and to link models
+    /*Rev.afterRemote('create',(ctx, unused, next) => {
+        
+        var current = loopback.getCurrentContext();
+        var accessToken = current.get('accessToken');
+        var Account = Rev.app.models.Account;
+        //We get the current user id
+        Account.findById(accessToken.userId, (err, model) => {
+                //We link coaches, collaborators and user to Rev
+                console.log(model);
+                if (ctx.result.coach) {
+                    ctx.result.unsetAttribute('coach');
+                }
+                if (ctx.result.collaborators) {
+                    ctx.result.unsetAttribute('collaborators');
+                }
+            next();
+        });
+    });
+    */
